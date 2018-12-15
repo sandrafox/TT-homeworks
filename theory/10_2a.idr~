@@ -1,0 +1,8 @@
+module Main
+
+main : IO ()
+main = putSrtLn (plusZ 5) 
+
+plusZ : (x : Nat) -> x = x + 0
+plusZ Z = Refl (Z + Z)
+plusZ (S k) = rewrite (plusZ k) in Refl 
